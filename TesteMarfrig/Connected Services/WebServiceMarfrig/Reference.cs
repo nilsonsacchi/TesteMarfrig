@@ -705,6 +705,12 @@ namespace TesteMarfrig.WebServiceMarfrig {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateCompraGado", ReplyAction="*")]
         System.Threading.Tasks.Task<TesteMarfrig.WebServiceMarfrig.UpdateCompraGadoResponse> UpdateCompraGadoAsync(TesteMarfrig.WebServiceMarfrig.UpdateCompraGadoRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateCompraGadoImpresso", ReplyAction="*")]
+        bool UpdateCompraGadoImpresso(int oGado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateCompraGadoImpresso", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> UpdateCompraGadoImpressoAsync(int oGado);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteCompraGado", ReplyAction="*")]
         bool DeleteCompraGado(int gadoId);
         
@@ -2150,6 +2156,14 @@ namespace TesteMarfrig.WebServiceMarfrig {
             inValue.Body = new TesteMarfrig.WebServiceMarfrig.UpdateCompraGadoRequestBody();
             inValue.Body.oGado = oGado;
             return ((TesteMarfrig.WebServiceMarfrig.WebServiceMarfrigSoap)(this)).UpdateCompraGadoAsync(inValue);
+        }
+        
+        public bool UpdateCompraGadoImpresso(int oGado) {
+            return base.Channel.UpdateCompraGadoImpresso(oGado);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateCompraGadoImpressoAsync(int oGado) {
+            return base.Channel.UpdateCompraGadoImpressoAsync(oGado);
         }
         
         public bool DeleteCompraGado(int gadoId) {

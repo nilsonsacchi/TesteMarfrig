@@ -150,6 +150,19 @@ namespace TesteMarfrig
 			frmRelatorio frmrelatorio = new frmRelatorio(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
 			frmrelatorio.ShowDialog();
 
+
+			WebServiceMarfrigSoapClient wbClinet = null;
+
+			try
+			{
+				wbClinet = new WebServiceMarfrigSoapClient();
+				wbClinet.UpdateCompraGadoImpresso(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
+			}
+			catch (Exception ex)
+			{
+				MetroFramework.MetroMessageBox.Show(this, ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			
 			Pesquisar();
 		}
 	}

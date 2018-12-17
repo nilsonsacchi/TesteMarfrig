@@ -23,6 +23,9 @@ namespace TesteMarfrig
 
 		private void frmRelatorio_Load(object sender, EventArgs e)
 		{
+			rpRelatorio.Width = this.Width - 10;
+			rpRelatorio.Height = this.Height - 10;
+
 			try
 			{
 				WebServiceMarfrigSoapClient webclient = new WebServiceMarfrigSoapClient();
@@ -39,6 +42,12 @@ namespace TesteMarfrig
 			
 			this.rpRelatorio.RefreshReport();
 			this.rpRelatorio.RefreshReport();
+		}
+
+		private void frmRelatorio_Resize(object sender, EventArgs e)
+		{
+			rpRelatorio.Width = this.Width - 10;
+			rpRelatorio.Height = this.Height - 10;
 		}
 	}
 }

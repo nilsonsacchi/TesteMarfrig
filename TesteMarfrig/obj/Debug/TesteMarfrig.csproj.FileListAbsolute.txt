@@ -74,3 +74,4 @@ C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.csproj.Generate
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.csproj.CoreCompileInputs.cache
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.exe
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.pdb
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.csprojResolveAssemblyReference.cache

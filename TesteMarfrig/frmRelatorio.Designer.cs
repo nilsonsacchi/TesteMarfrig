@@ -33,6 +33,7 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			this.compraGadoConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.rpRelatorio = new Microsoft.Reporting.WinForms.ReportViewer();
 			this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,10 +44,13 @@
 			this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.impressoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.compraGadoConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.compraGadoConsultaBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
 			this.SuspendLayout();
+			// 
+			// compraGadoConsultaBindingSource
+			// 
+			this.compraGadoConsultaBindingSource.DataSource = typeof(TesteMarfrig.Model.CompraGado.CompraGadoConsulta);
 			// 
 			// rpRelatorio
 			// 
@@ -55,10 +59,10 @@
 			reportDataSource1.Value = this.compraGadoConsultaBindingSource;
 			this.rpRelatorio.LocalReport.DataSources.Add(reportDataSource1);
 			this.rpRelatorio.LocalReport.ReportEmbeddedResource = "TesteMarfrig.Relatorio.rdlc";
-			this.rpRelatorio.Location = new System.Drawing.Point(1, 7);
+			this.rpRelatorio.Location = new System.Drawing.Point(5, 33);
 			this.rpRelatorio.Name = "rpRelatorio";
 			this.rpRelatorio.ServerReport.BearerToken = null;
-			this.rpRelatorio.Size = new System.Drawing.Size(980, 470);
+			this.rpRelatorio.Size = new System.Drawing.Size(972, 449);
 			this.rpRelatorio.TabIndex = 0;
 			// 
 			// metroGrid1
@@ -164,10 +168,6 @@
 			this.precoDataGridViewTextBoxColumn.HeaderText = "Preco";
 			this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
 			// 
-			// compraGadoConsultaBindingSource
-			// 
-			this.compraGadoConsultaBindingSource.DataSource = typeof(TesteMarfrig.Model.CompraGado.CompraGadoConsulta);
-			// 
 			// frmRelatorio
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,11 +176,11 @@
 			this.Controls.Add(this.metroGrid1);
 			this.Controls.Add(this.rpRelatorio);
 			this.Name = "frmRelatorio";
-			this.Text = "Relatório";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.frmRelatorio_Load);
-			((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+			this.Resize += new System.EventHandler(this.frmRelatorio_Resize);
 			((System.ComponentModel.ISupportInitialize)(this.compraGadoConsultaBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

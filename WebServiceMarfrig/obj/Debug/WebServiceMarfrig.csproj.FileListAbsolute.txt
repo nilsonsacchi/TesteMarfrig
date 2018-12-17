@@ -66,3 +66,4 @@ C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\zh-CHT\Microsoft.ReportViewer
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\obj\Debug\WebServiceMarfrig.csproj.CoreCompileInputs.cache
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\obj\Debug\WebServiceMarfrig.dll
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\obj\Debug\WebServiceMarfrig.pdb
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\obj\Debug\WebServiceMarfrig.csprojResolveAssemblyReference.cache

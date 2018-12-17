@@ -327,6 +327,23 @@ namespace WebServiceMarfrig
 		}
 
 		[WebMethod]
+		public bool UpdateCompraGadoImpresso(int oGado)
+		{
+			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexaoSql"].ConnectionString))
+			{
+				if (db.State == ConnectionState.Closed)
+				{
+					db.Open();
+				}
+				int resultado = db.Execute("sp_Atualizar_CompraGadoImpresso", new
+				{
+					Id = oGado
+				}, commandType: CommandType.StoredProcedure);
+				return resultado != 0;
+			}
+		}
+
+		[WebMethod]
 		public bool DeleteCompraGado(int gadoId)
 		{
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexaoSql"].ConnectionString))

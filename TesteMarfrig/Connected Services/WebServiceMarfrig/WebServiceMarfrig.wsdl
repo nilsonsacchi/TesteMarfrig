@@ -264,6 +264,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="UpdateCompraGadoImpresso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="oGado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCompraGadoImpressoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCompraGadoImpressoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="DeleteCompraGado">
         <s:complexType>
           <s:sequence>
@@ -435,6 +449,12 @@
   <wsdl:message name="UpdateCompraGadoSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateCompraGadoResponse" />
   </wsdl:message>
+  <wsdl:message name="UpdateCompraGadoImpressoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCompraGadoImpresso" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCompraGadoImpressoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCompraGadoImpressoResponse" />
+  </wsdl:message>
   <wsdl:message name="DeleteCompraGadoSoapIn">
     <wsdl:part name="parameters" element="tns:DeleteCompraGado" />
   </wsdl:message>
@@ -525,6 +545,10 @@
     <wsdl:operation name="UpdateCompraGado">
       <wsdl:input message="tns:UpdateCompraGadoSoapIn" />
       <wsdl:output message="tns:UpdateCompraGadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGadoImpresso">
+      <wsdl:input message="tns:UpdateCompraGadoImpressoSoapIn" />
+      <wsdl:output message="tns:UpdateCompraGadoImpressoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="DeleteCompraGado">
       <wsdl:input message="tns:DeleteCompraGadoSoapIn" />
@@ -677,6 +701,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateCompraGado">
       <soap:operation soapAction="http://tempuri.org/UpdateCompraGado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGadoImpresso">
+      <soap:operation soapAction="http://tempuri.org/UpdateCompraGadoImpresso" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -860,6 +893,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateCompraGado">
       <soap12:operation soapAction="http://tempuri.org/UpdateCompraGado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGadoImpresso">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCompraGadoImpresso" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
