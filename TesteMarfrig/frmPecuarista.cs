@@ -65,22 +65,16 @@ namespace TesteMarfrig
 
 		private void btnAlterar_Click(object sender, EventArgs e)
 		{
-			if (txtNome.Text.Length <= 0)
+			if (txtNome.Text.Trim() == "")
 			{
 				MetroFramework.MetroMessageBox.Show(this, "O nome do pecuarista não pode ficar em branco.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				txtNome.Focus();
 				return;
 			}
 			else
 			{
 				if (MetroFramework.MetroMessageBox.Show(this, "Deseja salvar as informações ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-				{
-					if (txtId.Text != "NOVO")
-					{
-						txtId.Text = metroGrid1.CurrentRow.Cells[0].Value.ToString();
-						txtNome.Text = metroGrid1.CurrentRow.Cells[1].Value.ToString();
-					}
 					return;
-				}
 
 				WebServiceMarfrigSoapClient wbClinet = null;
 				Pecuarista classPecuarista = null;
@@ -90,13 +84,13 @@ namespace TesteMarfrig
 					wbClinet = new WebServiceMarfrigSoapClient();
 					classPecuarista = new WebServiceMarfrig.Pecuarista();
 
-					if (txtId.Text != "NOVO")
+					if (txtId.Text != "NOVO" && txtId.Text != "")
 						classPecuarista.Id = Convert.ToInt32(txtId.Text);
 					else classPecuarista.Id = 1;
 
 					classPecuarista.Nome = txtNome.Text;
 
-					if (txtId.Text != "NOVO")
+					if (txtId.Text != "NOVO" && txtId.Text != "")
 						wbClinet.UpdatePecuarista(classPecuarista);
 					else
 					{
@@ -117,30 +111,23 @@ namespace TesteMarfrig
 
 		private void btnCancelar_Click(object sender, EventArgs e)
 		{
-			if (txtId.Text != "NOVO")
-			{
-				if (MetroFramework.MetroMessageBox.Show(this, "Deseja cancelar a alteração ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-				{
-					txtId.Text = metroGrid1.CurrentRow.Cells[0].Value.ToString();
-					txtNome.Text = metroGrid1.CurrentRow.Cells[1].Value.ToString();
-				}
-			}
+			if (MetroFramework.MetroMessageBox.Show(this, "Deseja cancelar a operação ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+				return;
 			else
-			{
-				if (txtId.Text == "NOVO")
-					if (MetroFramework.MetroMessageBox.Show(this, "Deseja cancelar o novo registro ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-					{
-						txtId.Text = "";
-						txtNome.Text = "";
-						GetAllPecuarista();
-					}
-				}
+			{ 
+				txtId.Text = "";
+				txtNome.Text = "";
+				GetAllPecuarista();
+			}
 		}
 
 		private void metroButton2_Click(object sender, EventArgs e)
 		{
-			if (txtId.Text == "NOVO")
+			if (txtId.Text == "NOVO" || txtId.Text == "")
+			{
+				MetroFramework.MetroMessageBox.Show(this, "Por favor, selecione um pecuarista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return;
+			}
 
 			if (MetroFramework.MetroMessageBox.Show(this, "Tem certeza que deseja excluir o registro", "Excluir ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
 				return;

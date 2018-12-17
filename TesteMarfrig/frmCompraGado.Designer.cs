@@ -120,7 +120,6 @@
 			// 
 			// txtDataEntrega
 			// 
-			this.txtDataEntrega.Checked = false;
 			this.txtDataEntrega.Enabled = false;
 			this.txtDataEntrega.Location = new System.Drawing.Point(12, 139);
 			this.txtDataEntrega.MinimumSize = new System.Drawing.Size(0, 29);

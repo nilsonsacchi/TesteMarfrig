@@ -40,6 +40,7 @@ namespace TesteMarfrig
 			txtPreco.Text = "0";
 
 			txtDescricao.Focus();
+
 		}
 
 		private void btnSair_Click(object sender, EventArgs e)
@@ -54,7 +55,6 @@ namespace TesteMarfrig
 				txtId.Text = metroGrid1.CurrentRow.Cells[0].Value.ToString();
 				txtDescricao.Text = metroGrid1.CurrentRow.Cells[1].Value.ToString();
 				txtPreco.Text = metroGrid1.CurrentRow.Cells[2].Value.ToString();
-
 			}
 			catch (Exception ex)
 			{
@@ -72,15 +72,7 @@ namespace TesteMarfrig
 			else
 			{
 				if (MetroFramework.MetroMessageBox.Show(this, "Deseja salvar as informações ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-				{
-					if (txtId.Text != "NOVO")
-					{
-						txtId.Text = metroGrid1.CurrentRow.Cells[0].Value.ToString();
-						txtDescricao.Text = metroGrid1.CurrentRow.Cells[1].Value.ToString();
-						txtPreco.Text = metroGrid1.CurrentRow.Cells[2].Value.ToString();
-					}
 					return;
-				}
 
 				WebServiceMarfrigSoapClient wbClinet = null;
 				Animal classAnimal = null;
@@ -90,14 +82,33 @@ namespace TesteMarfrig
 					wbClinet = new WebServiceMarfrigSoapClient();
 					classAnimal = new WebServiceMarfrig.Animal();
 
-					if (txtId.Text != "NOVO")
+					if (txtId.Text != "NOVO" && txtId.Text != "")
 						classAnimal.Id = Convert.ToInt32(txtId.Text);
 					else classAnimal.Id = 1;
 
 					classAnimal.Descricao = txtDescricao.Text;
-					classAnimal.Preco = double.Parse(txtPreco.Text);
 
-					if (txtId.Text != "NOVO")
+					try
+					{
+						double.Parse(txtPreco.Text);
+					}
+					catch (Exception)
+					{
+						MetroFramework.MetroMessageBox.Show(this, "Digite um preço para o animal.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						txtPreco.Focus();
+						return;
+					}
+
+					if (double.Parse(txtPreco.Text) > 0 )
+						classAnimal.Preco = double.Parse(txtPreco.Text);
+					else
+					{
+						MetroFramework.MetroMessageBox.Show(this, "Digite um preço para o animal.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						txtPreco.Focus();
+						return;
+					}
+
+					if (txtId.Text != "NOVO" && txtId.Text != "")
 						wbClinet.UpdateAnimal(classAnimal);
 					else
 					{
@@ -119,8 +130,11 @@ namespace TesteMarfrig
 
 		private void metroButton2_Click(object sender, EventArgs e)
 		{
-			if (txtId.Text == "NOVO")
+			if (txtId.Text == "NOVO" || txtId.Text == "")
+			{
+				MetroFramework.MetroMessageBox.Show(this, "Por favor, selecione um animal.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				return;
+			}
 
 			if (MetroFramework.MetroMessageBox.Show(this, "Tem certeza que deseja excluir o registro", "Excluir ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
 				return;
@@ -182,25 +196,13 @@ namespace TesteMarfrig
 
 		private void btnCancelar_Click(object sender, EventArgs e)
 		{
-			if (txtId.Text != "NOVO")
+			if (MetroFramework.MetroMessageBox.Show(this, "Deseja cancelar a alteração ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 			{
-				if (MetroFramework.MetroMessageBox.Show(this, "Deseja cancelar a alteração ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-				{
-					txtId.Text = metroGrid1.CurrentRow.Cells[0].Value.ToString();
-					txtDescricao.Text = metroGrid1.CurrentRow.Cells[1].Value.ToString();
-					txtPreco.Text = metroGrid1.CurrentRow.Cells[2].Value.ToString();
-				}
-			}
-			else
-			{
-				if (txtId.Text == "NOVO")
-					if (MetroFramework.MetroMessageBox.Show(this, "Deseja cancelar o novo registro ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-					{
-						txtId.Text = "";
-						txtDescricao.Text = "";
-						txtPreco.Text = "";
-						GetAllAnimal();
-					}
+				txtId.Text = "";
+				txtDescricao.Text = "";
+				txtPreco.Text = "";
+
+				GetAllAnimal();
 			}
 		}
 

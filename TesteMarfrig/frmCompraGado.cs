@@ -77,7 +77,17 @@ namespace TesteMarfrig
 
 				if (txtDataEntrega.Checked)
 					classCompragado.DataEntrega = Convert.ToDateTime(txtDataEntrega.Text);
+				else
+				{
+					MetroFramework.MetroMessageBox.Show(this, "Por favor, selecionar uma data de entrega.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
 
+				if (cmbPecuarista.SelectedValue == null)
+				{
+					MetroFramework.MetroMessageBox.Show(this, "Por favor, selecionar um pecuarista", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
 				classCompragado.PecuaristaId = Convert.ToInt32(cmbPecuarista.SelectedValue);
 
 				int Id;
@@ -132,7 +142,7 @@ namespace TesteMarfrig
 			if (gdataentrega != null)
 				if (gdataentrega >= Convert.ToDateTime("01/01/2001"))
 				{
-					txtDataEntrega.Checked = true;
+					//txtDataEntrega.Checked = true;
 					txtDataEntrega.Value = Convert.ToDateTime(gdataentrega);
 				}
 
@@ -155,7 +165,7 @@ namespace TesteMarfrig
 			{
 				btnNovoAnimal.Enabled = true;
 				txtDataEntrega.Enabled = true;
-				txtDataEntrega.Checked = false;
+				//txtDataEntrega.Checked = false;
 				cmbPecuarista.Enabled = true;
 
 				txtId.Text = "NOVO";

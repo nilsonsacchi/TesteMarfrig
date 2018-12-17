@@ -222,6 +222,19 @@ namespace WebServiceMarfrig
 		}
 
 		[WebMethod]
+		public List<Animal> GetAllAnimalCompraGadoItem(int compraGadoId)
+		{
+			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexaoSql"].ConnectionString))
+			{
+				if (db.State == ConnectionState.Closed)
+				{
+					db.Open();
+				}
+				return db.Query<Animal>("SELECT * FROM Animal", commandType: CommandType.Text).ToList();
+			}
+		}
+
+		[WebMethod]
 		public int InserirAnimal(Animal oAnimal)
 		{
 			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexaoSql"].ConnectionString))
