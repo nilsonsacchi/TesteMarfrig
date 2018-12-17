@@ -26,5 +26,3 @@ AS
 		AnimalId = @AnimalId
 	WHERE Id = @ID
 GO
-
-DROP PROCEDURE ..sp_Delete_CompraGadoItem

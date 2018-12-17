@@ -25,5 +25,3 @@ AS
 		PecuaristaId = @PecuaristaId
 	WHERE Id = @ID	
 GO
-
-DROP PROCEDURE ..sp_Delete_CompraGado
