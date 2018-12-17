@@ -1,0 +1,13 @@
+Teste Marfrig
+
+Foi ultilizado o metro para componentes
+VS2017 Community com Framawork 4.6 / Sql Server 2014
+O banco de dados esta em .\TesteMarfrig.back
+Scripts das Procs .\TesteMarfrig\Scripts Proc
+No banco de dados, existe o diagrama de banco usado no mesmo.
+
+// WebService
+Foi criado dois WebServices:
+	Um unitário, para caso o sistema seja distribuido: AnimalService.asmx, CompraGadoService.asmx
+	Outro WebServiceMarfrig.asmx para consumo total das procs.
+	

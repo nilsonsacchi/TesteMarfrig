@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TesteMarfrig
 {
-	public partial class frmRelatorio : MetroFramework.Forms.MetroForm;
+	public partial class frmRelatorio : MetroFramework.Forms.MetroForm
 	{
 		public frmRelatorio()
 		{

@@ -166,6 +166,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Relatorio.rdlc" />
     <None Include="Connected Services\WebServiceMarfrig\TesteMarfrig.WebServiceMarfrig.Animal.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
