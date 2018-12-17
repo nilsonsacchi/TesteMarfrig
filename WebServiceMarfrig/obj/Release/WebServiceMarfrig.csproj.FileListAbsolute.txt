@@ -1,0 +1,10 @@
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\WebServiceMarfrig.dll.config
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\WebServiceMarfrig.dll
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\WebServiceMarfrig.pdb
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\Dapper.dll
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\Dapper.xml
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\obj\Release\WebServiceMarfrig.csproj.CoreCompileInputs.cache
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\obj\Release\WebServiceMarfrig.dll
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\obj\Release\WebServiceMarfrig.pdb

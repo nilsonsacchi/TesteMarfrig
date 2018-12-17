@@ -1,0 +1,17 @@
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\TesteMarfrig.exe.config
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\TesteMarfrig.exe
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\TesteMarfrig.pdb
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\MetroFramework.Design.dll
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\MetroFramework.dll
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\MetroFramework.Fonts.dll
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.frmCompraGadoItem.resources
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.frmAnimal.resources
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.frmCompraGado.resources
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.frmConsultaCompraGado.resources
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.frmPrincipal.resources
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.frmPecuarista.resources
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.Properties.Resources.resources
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.csproj.GenerateResource.Cache
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.csproj.CoreCompileInputs.cache
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.exe
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\obj\Debug\TesteMarfrig.pdb
