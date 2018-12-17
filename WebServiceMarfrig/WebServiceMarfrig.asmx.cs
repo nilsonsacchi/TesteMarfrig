@@ -101,6 +101,33 @@ namespace WebServiceMarfrig
 			}
 		}
 
+		[WebMethod]
+		public List<CompraGadoConsulta> GetRelatorioCompraGado(int compraGadoId)
+		{
+			using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["ConexaoSql"].ConnectionString))
+			{
+				if (db.State == ConnectionState.Closed)
+				{
+					db.Open();
+				}
+				DynamicParameters p = new DynamicParameters();
+
+				p.AddDynamicParams(new { Id = compraGadoId });
+				string select = null;
+				select = "SELECT cg.id, p.Nome, cg.DataEntrega, COUNT(a.Id) QuantidadeItem, a.Preco, ";
+				select = select + "SUM(cgi.Quantidade * a.Preco) AS ValorTotal ";
+				select = select + "FROM CompraGado cg ";
+				select = select + "	INNER JOIN Pecuarista p ON p.id = cg.PecuaristaId ";
+				select = select + "	LEFT JOIN CompraGadoItem cgi ON cgi.CompraGadoId = cg.Id ";
+				select = select + "	LEFT JOIN Animal a ON a.id = cgi.AnimalId ";
+				select = select + "	WHERE ";
+				select = select + "		(@id             IS NULL OR cg.id = @id) ";
+				select = select + "	GROUP BY cg.id, p.Nome, cg.DataEntrega, a.Preco";
+
+				return db.Query<CompraGadoConsulta>(select, p, commandType: CommandType.Text).ToList();
+			}
+		}
+
 		// ---------------------------------------------- Pecuarista INICIO
 		[WebMethod]
 		public List<Pecuarista> GetAllPecuarista()

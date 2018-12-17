@@ -67,8 +67,23 @@
           <s:element minOccurs="1" maxOccurs="1" name="QuantidadeItem" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="ValorTotal" type="s:double" />
           <s:element minOccurs="0" maxOccurs="1" name="Impresso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Preco" nillable="true" type="s:double" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetRelatorioCompraGado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="compraGadoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRelatorioCompraGadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRelatorioCompraGadoResult" type="tns:ArrayOfCompraGadoConsulta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetAllPecuarista">
         <s:complexType />
       </s:element>
@@ -342,6 +357,12 @@
   <wsdl:message name="GetConsultaCompraGadoSoapOut">
     <wsdl:part name="parameters" element="tns:GetConsultaCompraGadoResponse" />
   </wsdl:message>
+  <wsdl:message name="GetRelatorioCompraGadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRelatorioCompraGado" />
+  </wsdl:message>
+  <wsdl:message name="GetRelatorioCompraGadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRelatorioCompraGadoResponse" />
+  </wsdl:message>
   <wsdl:message name="GetAllPecuaristaSoapIn">
     <wsdl:part name="parameters" element="tns:GetAllPecuarista" />
   </wsdl:message>
@@ -453,6 +474,10 @@
       <wsdl:input message="tns:GetConsultaCompraGadoSoapIn" />
       <wsdl:output message="tns:GetConsultaCompraGadoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetRelatorioCompraGado">
+      <wsdl:input message="tns:GetRelatorioCompraGadoSoapIn" />
+      <wsdl:output message="tns:GetRelatorioCompraGadoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllPecuarista">
       <wsdl:input message="tns:GetAllPecuaristaSoapIn" />
       <wsdl:output message="tns:GetAllPecuaristaSoapOut" />
@@ -535,6 +560,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetConsultaCompraGado">
       <soap:operation soapAction="http://tempuri.org/GetConsultaCompraGado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatorioCompraGado">
+      <soap:operation soapAction="http://tempuri.org/GetRelatorioCompraGado" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -709,6 +743,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetConsultaCompraGado">
       <soap12:operation soapAction="http://tempuri.org/GetConsultaCompraGado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatorioCompraGado">
+      <soap12:operation soapAction="http://tempuri.org/GetRelatorioCompraGado" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

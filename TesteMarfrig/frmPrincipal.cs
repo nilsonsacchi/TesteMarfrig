@@ -44,5 +44,11 @@ namespace TesteMarfrig
 		{
 			
 		}
+
+		private void relatórioDeComprasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			//frmRelatorio frmrelatorio = new frmRelatorio();
+			//frmrelatorio.ShowDialog();
+		}
 	}
 }

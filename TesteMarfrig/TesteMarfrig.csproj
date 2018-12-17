@@ -203,6 +203,9 @@
     <None Include="Connected Services\WebServiceMarfrig\TesteMarfrig.WebServiceMarfrig.GetConsultaCompraGadoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\WebServiceMarfrig\TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\WebServiceMarfrig\TesteMarfrig.WebServiceMarfrig.InserirAnimalResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -233,6 +236,7 @@
     <None Include="Connected Services\WebServiceMarfrig\WebServiceMarfrig.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Pecuarista.datasource" />
+    <None Include="Properties\DataSources\TesteMarfrig.DataSetRelatorioTableAdapters.QueriesTableAdapter.datasource" />
     <None Include="Properties\DataSources\TesteMarfrig.Model.Animal.Animal.datasource" />
     <None Include="Properties\DataSources\TesteMarfrig.Model.CompraGado.CompraGadoConsulta.datasource" />
     <None Include="Properties\DataSources\TesteMarfrig.Model.CompraGado.CompraGadoConsulta1.datasource" />

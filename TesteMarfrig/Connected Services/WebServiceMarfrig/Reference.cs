@@ -248,6 +248,8 @@ namespace TesteMarfrig.WebServiceMarfrig {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ImpressoField;
         
+        private System.Nullable<double> PrecoField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -345,6 +347,19 @@ namespace TesteMarfrig.WebServiceMarfrig {
                 if ((object.ReferenceEquals(this.ImpressoField, value) != true)) {
                     this.ImpressoField = value;
                     this.RaisePropertyChanged("Impresso");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.Nullable<double> Preco {
+            get {
+                return this.PrecoField;
+            }
+            set {
+                if ((this.PrecoField.Equals(value) != true)) {
+                    this.PrecoField = value;
+                    this.RaisePropertyChanged("Preco");
                 }
             }
         }
@@ -601,6 +616,13 @@ namespace TesteMarfrig.WebServiceMarfrig {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetConsultaCompraGado", ReplyAction="*")]
         System.Threading.Tasks.Task<TesteMarfrig.WebServiceMarfrig.GetConsultaCompraGadoResponse> GetConsultaCompraGadoAsync(TesteMarfrig.WebServiceMarfrig.GetConsultaCompraGadoRequest request);
         
+        // CODEGEN: Generating message contract since element name GetRelatorioCompraGadoResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRelatorioCompraGado", ReplyAction="*")]
+        TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoResponse GetRelatorioCompraGado(TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRelatorioCompraGado", ReplyAction="*")]
+        System.Threading.Tasks.Task<TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoResponse> GetRelatorioCompraGadoAsync(TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequest request);
+        
         // CODEGEN: Generating message contract since element name GetAllPecuaristaResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllPecuarista", ReplyAction="*")]
         TesteMarfrig.WebServiceMarfrig.GetAllPecuaristaResponse GetAllPecuarista(TesteMarfrig.WebServiceMarfrig.GetAllPecuaristaRequest request);
@@ -850,6 +872,74 @@ namespace TesteMarfrig.WebServiceMarfrig {
         
         public GetConsultaCompraGadoResponseBody(TesteMarfrig.WebServiceMarfrig.CompraGadoConsulta[] GetConsultaCompraGadoResult) {
             this.GetConsultaCompraGadoResult = GetConsultaCompraGadoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRelatorioCompraGadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRelatorioCompraGado", Namespace="http://tempuri.org/", Order=0)]
+        public TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequestBody Body;
+        
+        public GetRelatorioCompraGadoRequest() {
+        }
+        
+        public GetRelatorioCompraGadoRequest(TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetRelatorioCompraGadoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int compraGadoId;
+        
+        public GetRelatorioCompraGadoRequestBody() {
+        }
+        
+        public GetRelatorioCompraGadoRequestBody(int compraGadoId) {
+            this.compraGadoId = compraGadoId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRelatorioCompraGadoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRelatorioCompraGadoResponse", Namespace="http://tempuri.org/", Order=0)]
+        public TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoResponseBody Body;
+        
+        public GetRelatorioCompraGadoResponse() {
+        }
+        
+        public GetRelatorioCompraGadoResponse(TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetRelatorioCompraGadoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public TesteMarfrig.WebServiceMarfrig.CompraGadoConsulta[] GetRelatorioCompraGadoResult;
+        
+        public GetRelatorioCompraGadoResponseBody() {
+        }
+        
+        public GetRelatorioCompraGadoResponseBody(TesteMarfrig.WebServiceMarfrig.CompraGadoConsulta[] GetRelatorioCompraGadoResult) {
+            this.GetRelatorioCompraGadoResult = GetRelatorioCompraGadoResult;
         }
     }
     
@@ -1777,6 +1867,31 @@ namespace TesteMarfrig.WebServiceMarfrig {
             inValue.Body = new TesteMarfrig.WebServiceMarfrig.GetConsultaCompraGadoRequestBody();
             inValue.Body.compraGado = compraGado;
             return ((TesteMarfrig.WebServiceMarfrig.WebServiceMarfrigSoap)(this)).GetConsultaCompraGadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoResponse TesteMarfrig.WebServiceMarfrig.WebServiceMarfrigSoap.GetRelatorioCompraGado(TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequest request) {
+            return base.Channel.GetRelatorioCompraGado(request);
+        }
+        
+        public TesteMarfrig.WebServiceMarfrig.CompraGadoConsulta[] GetRelatorioCompraGado(int compraGadoId) {
+            TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequest inValue = new TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequest();
+            inValue.Body = new TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequestBody();
+            inValue.Body.compraGadoId = compraGadoId;
+            TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoResponse retVal = ((TesteMarfrig.WebServiceMarfrig.WebServiceMarfrigSoap)(this)).GetRelatorioCompraGado(inValue);
+            return retVal.Body.GetRelatorioCompraGadoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoResponse> TesteMarfrig.WebServiceMarfrig.WebServiceMarfrigSoap.GetRelatorioCompraGadoAsync(TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequest request) {
+            return base.Channel.GetRelatorioCompraGadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoResponse> GetRelatorioCompraGadoAsync(int compraGadoId) {
+            TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequest inValue = new TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequest();
+            inValue.Body = new TesteMarfrig.WebServiceMarfrig.GetRelatorioCompraGadoRequestBody();
+            inValue.Body.compraGadoId = compraGadoId;
+            return ((TesteMarfrig.WebServiceMarfrig.WebServiceMarfrigSoap)(this)).GetRelatorioCompraGadoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

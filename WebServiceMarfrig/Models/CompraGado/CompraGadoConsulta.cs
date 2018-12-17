@@ -11,5 +11,6 @@ namespace WebServiceMarfrig.Models.CompraGado
 		public int QuantidadeItem { get; set; }
 		public double ValorTotal { get; set; }
 		public string Impresso { get; set; }
+		public double? Preco { get; set; }
 	}
 }

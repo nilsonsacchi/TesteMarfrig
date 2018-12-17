@@ -82,15 +82,15 @@
 			this.comprasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.compraGadoToolStripMenuItem});
 			this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-			this.comprasToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-			this.comprasToolStripMenuItem.Text = "Manutenção";
+			this.comprasToolStripMenuItem.Size = new System.Drawing.Size(153, 20);
+			this.comprasToolStripMenuItem.Text = "Manutenção\\Relatório";
 			// 
 			// compraGadoToolStripMenuItem
 			// 
 			this.compraGadoToolStripMenuItem.Name = "compraGadoToolStripMenuItem";
 			this.compraGadoToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
-			this.compraGadoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-			this.compraGadoToolStripMenuItem.Text = "&Compra do Gado";
+			this.compraGadoToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+			this.compraGadoToolStripMenuItem.Text = "&Consulta de compra do gado";
 			this.compraGadoToolStripMenuItem.Click += new System.EventHandler(this.compraGadoToolStripMenuItem_Click);
 			// 
 			// relatóriosToolStripMenuItem
@@ -100,6 +100,7 @@
 			this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
 			this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
 			this.relatóriosToolStripMenuItem.Text = "Relatórios";
+			this.relatóriosToolStripMenuItem.Visible = false;
 			// 
 			// relatórioDeComprasToolStripMenuItem
 			// 
@@ -107,6 +108,7 @@
 			this.relatórioDeComprasToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
 			this.relatórioDeComprasToolStripMenuItem.Size = new System.Drawing.Size(340, 22);
 			this.relatórioDeComprasToolStripMenuItem.Text = "&Relatório de movimentações de compra";
+			this.relatórioDeComprasToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeComprasToolStripMenuItem_Click);
 			// 
 			// frmPrincipal
 			// 

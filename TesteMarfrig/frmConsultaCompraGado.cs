@@ -141,5 +141,16 @@ namespace TesteMarfrig
 
 			Pesquisar();
 		}
+
+		private void btnImprimir_Click(object sender, EventArgs e)
+		{
+			if (metroGrid1.CurrentRow.Cells[0].Value.ToString() == "")
+				return;
+
+			frmRelatorio frmrelatorio = new frmRelatorio(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
+			frmrelatorio.ShowDialog();
+
+			Pesquisar();
+		}
 	}
 }
