@@ -5,6 +5,11 @@ VS2017 Community com Framawork 4.6 / Sql Server 2014
 O banco de dados esta em .\TesteMarfrig.back
 Scripts das Procs .\TesteMarfrig\Scripts Proc
 No banco de dados, existe o diagrama de banco usado no mesmo.
+Para teste local: 
+	Na pasta .TesteMarfrig\Sistemas existem o sistema .exe
+	Configurar o .conig para o banco apropriado.
+	Na pasta .TesteMarfrig\Sistemas\WebService existe o webserver utilizado. 
+	Basta publicar o mesmo com o IIS ou similar e configurar o .config com sua rota configurada.
 
 // WebService
 Foi criado dois WebServices:
