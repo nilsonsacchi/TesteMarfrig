@@ -4,7 +4,7 @@ Foi ultilizado o metro para componentes
 VS2017 Community com Framawork 4.6 / Sql Server 2014
 O banco de dados esta em .\TesteMarfrig.back
 Scripts das Procs .\TesteMarfrig\Scripts Proc
-No banco de dados, existe o diagrama de banco usado no mesmo.
+No banco de dados, existe o diagrama de banco no mesmo.
 Para teste local: 
 	Na pasta .TesteMarfrig\Sistemas existem o sistema .exe
 	Configurar o .conig para o banco apropriado.
