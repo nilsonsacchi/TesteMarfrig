@@ -192,6 +192,9 @@
 			// 
 			// metroGrid1
 			// 
+			this.metroGrid1.AllowUserToAddRows = false;
+			this.metroGrid1.AllowUserToDeleteRows = false;
+			this.metroGrid1.AllowUserToResizeColumns = false;
 			this.metroGrid1.AllowUserToResizeRows = false;
 			this.metroGrid1.AutoGenerateColumns = false;
 			this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -320,6 +323,7 @@
 			this.MaximizeBox = false;
 			this.Name = "frmCompraGado";
 			this.Text = "Compra de Gado";
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCompraGado_FormClosed);
 			this.Load += new System.EventHandler(this.frmCompraGado_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pecuaristaBindingSource)).EndInit();
 			this.groupBox1.ResumeLayout(false);

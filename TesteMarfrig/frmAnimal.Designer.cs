@@ -40,16 +40,16 @@
 			this.txtId = new MetroFramework.Controls.MetroTextBox();
 			this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
 			this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.btnSair = new MetroFramework.Controls.MetroButton();
 			this.btnInserir = new MetroFramework.Controls.MetroButton();
 			this.txtDescricao = new MetroFramework.Controls.MetroTextBox();
 			this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
 			this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
 			this.txtPreco = new MetroFramework.Controls.MetroTextBox();
-			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).BeginInit();
 			this.SuspendLayout();
@@ -135,6 +135,9 @@
 			// 
 			// metroGrid1
 			// 
+			this.metroGrid1.AllowUserToAddRows = false;
+			this.metroGrid1.AllowUserToDeleteRows = false;
+			this.metroGrid1.AllowUserToResizeColumns = false;
 			this.metroGrid1.AllowUserToResizeRows = false;
 			this.metroGrid1.AutoGenerateColumns = false;
 			this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -183,6 +186,36 @@
 			this.metroGrid1.Size = new System.Drawing.Size(468, 159);
 			this.metroGrid1.TabIndex = 98;
 			this.metroGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellClick);
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+			this.dataGridViewTextBoxColumn1.HeaderText = "Código";
+			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.dataGridViewTextBoxColumn1.ReadOnly = true;
+			this.dataGridViewTextBoxColumn1.Width = 50;
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this.dataGridViewTextBoxColumn2.DataPropertyName = "Descricao";
+			this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
+			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			this.dataGridViewTextBoxColumn2.ReadOnly = true;
+			this.dataGridViewTextBoxColumn2.Width = 250;
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this.dataGridViewTextBoxColumn3.DataPropertyName = "Preco";
+			dataGridViewCellStyle2.Format = "C2";
+			dataGridViewCellStyle2.NullValue = "0,00";
+			this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
+			this.dataGridViewTextBoxColumn3.HeaderText = "Preço";
+			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			this.dataGridViewTextBoxColumn3.ReadOnly = true;
+			// 
+			// animalBindingSource
+			// 
+			this.animalBindingSource.DataSource = typeof(TesteMarfrig.Model.Animal.Animal);
 			// 
 			// btnSair
 			// 
@@ -281,36 +314,6 @@
 			this.txtPreco.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
 			this.txtPreco.TextChanged += new System.EventHandler(this.txtPreco_TextChanged);
 			this.txtPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreco_KeyPress);
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-			this.dataGridViewTextBoxColumn1.HeaderText = "Código";
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			this.dataGridViewTextBoxColumn1.ReadOnly = true;
-			this.dataGridViewTextBoxColumn1.Width = 50;
-			// 
-			// dataGridViewTextBoxColumn2
-			// 
-			this.dataGridViewTextBoxColumn2.DataPropertyName = "Descricao";
-			this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
-			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			this.dataGridViewTextBoxColumn2.ReadOnly = true;
-			this.dataGridViewTextBoxColumn2.Width = 250;
-			// 
-			// dataGridViewTextBoxColumn3
-			// 
-			this.dataGridViewTextBoxColumn3.DataPropertyName = "Preco";
-			dataGridViewCellStyle2.Format = "C2";
-			dataGridViewCellStyle2.NullValue = "0,00";
-			this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
-			this.dataGridViewTextBoxColumn3.HeaderText = "Preço";
-			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			this.dataGridViewTextBoxColumn3.ReadOnly = true;
-			// 
-			// animalBindingSource
-			// 
-			this.animalBindingSource.DataSource = typeof(TesteMarfrig.Model.Animal.Animal);
 			// 
 			// frmAnimal
 			// 

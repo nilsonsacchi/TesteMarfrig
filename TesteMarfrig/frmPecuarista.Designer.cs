@@ -101,6 +101,9 @@
 			// 
 			// metroGrid1
 			// 
+			this.metroGrid1.AllowUserToAddRows = false;
+			this.metroGrid1.AllowUserToDeleteRows = false;
+			this.metroGrid1.AllowUserToResizeColumns = false;
 			this.metroGrid1.AllowUserToResizeRows = false;
 			this.metroGrid1.AutoGenerateColumns = false;
 			this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));

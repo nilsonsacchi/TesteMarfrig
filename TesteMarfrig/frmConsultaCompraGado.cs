@@ -47,55 +47,61 @@ namespace TesteMarfrig
 
 		private void btnAlterar_Click(object sender, EventArgs e)
 		{
-			if (metroGrid1.CurrentRow.Cells[6].Value.ToString() != null)
-				if (metroGrid1.CurrentRow.Cells[6].Value.ToString() == "Não")
-				{
-					if (metroGrid1.CurrentRow.Cells[0].Value.ToString() != null)
+			if (metroGrid1.RowCount > 0)
+			{
+				if (metroGrid1.CurrentRow.Cells[6].Value.ToString() != null)
+					if (metroGrid1.CurrentRow.Cells[6].Value.ToString() == "Não")
 					{
-						oEntity = EntityState.Alterar;
-						frmCompraGado frmcompragado = new frmCompraGado(oEntity, metroGrid1.CurrentRow.Cells[0].Value.ToString(), Convert.ToDateTime(metroGrid1.CurrentRow.Cells[3].Value.ToString()), metroGrid1.CurrentRow.Cells[2].Value.ToString());
-						frmcompragado.ShowDialog();
+						if (metroGrid1.CurrentRow.Cells[0].Value.ToString() != null)
+						{
+							oEntity = EntityState.Alterar;
+							frmCompraGado frmcompragado = new frmCompraGado(oEntity, metroGrid1.CurrentRow.Cells[0].Value.ToString(), Convert.ToDateTime(metroGrid1.CurrentRow.Cells[3].Value.ToString()), metroGrid1.CurrentRow.Cells[2].Value.ToString());
+							frmcompragado.ShowDialog();
 
-						Pesquisar();
+							Pesquisar();
+						}
 					}
-				}
-				else
-				{
-					MetroFramework.MetroMessageBox.Show(this, "Não é permitido a alteração de compra já impresso.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					return;
-				}
+					else
+					{
+						MetroFramework.MetroMessageBox.Show(this, "Não é permitido a alteração de compra já impresso.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return;
+					}
+			}
 		}
 
 		private void btnExcluir_Click(object sender, EventArgs e)
 		{
-			if (metroGrid1.CurrentRow.Cells[6].Value.ToString() != null)
-				if (metroGrid1.CurrentRow.Cells[6].Value.ToString() == "Não")
-				{
-					if (metroGrid1.CurrentRow.Cells[0].Value.ToString() != null)
+			if (metroGrid1.RowCount > 0)
+			{
+				if (metroGrid1.CurrentRow.Cells[6].Value.ToString() != null)
+					if (metroGrid1.CurrentRow.Cells[6].Value.ToString() == "Não")
 					{
-						if (MetroFramework.MetroMessageBox.Show(this, "Tem certeza que deseja excluir a compra : " + metroGrid1.CurrentRow.Cells[0].Value.ToString(), "Excluir ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-							return;
-
-						WebServiceMarfrigSoapClient wbClinet = null;
-
-						try
+						if (metroGrid1.CurrentRow.Cells[0].Value.ToString() != null)
 						{
-							wbClinet = new WebServiceMarfrigSoapClient();
-							wbClinet.DeleteCompraGado(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
-						}
-						catch (Exception ex)
-						{
-							MetroFramework.MetroMessageBox.Show(this, ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						}
+							if (MetroFramework.MetroMessageBox.Show(this, "Tem certeza que deseja excluir a compra : " + metroGrid1.CurrentRow.Cells[0].Value.ToString(), "Excluir ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+								return;
 
-						Pesquisar();
+							WebServiceMarfrigSoapClient wbClinet = null;
+
+							try
+							{
+								wbClinet = new WebServiceMarfrigSoapClient();
+								wbClinet.DeleteCompraGado(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
+							}
+							catch (Exception ex)
+							{
+								MetroFramework.MetroMessageBox.Show(this, ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							}
+
+							Pesquisar();
+						}
 					}
-				}
-				else
-				{
-					MetroFramework.MetroMessageBox.Show(this, "Não é permitido excluir uma compra já impresso.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					return;
-				}
+					else
+					{
+						MetroFramework.MetroMessageBox.Show(this, "Não é permitido excluir uma compra já impresso.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return;
+					}
+			}
 		}
 
 		private void btnPesquisar_Click(object sender, EventArgs e)
@@ -144,26 +150,30 @@ namespace TesteMarfrig
 
 		private void btnImprimir_Click(object sender, EventArgs e)
 		{
-			if (metroGrid1.CurrentRow.Cells[0].Value.ToString() == "")
-				return;
-
-			frmRelatorio frmrelatorio = new frmRelatorio(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
-			frmrelatorio.ShowDialog();
-
-
-			WebServiceMarfrigSoapClient wbClinet = null;
-
-			try
+			if (metroGrid1.RowCount > 0)
 			{
-				wbClinet = new WebServiceMarfrigSoapClient();
-				wbClinet.UpdateCompraGadoImpresso(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
+
+				if (metroGrid1.CurrentRow.Cells[0].Value.ToString() == "")
+					return;
+
+				frmRelatorio frmrelatorio = new frmRelatorio(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
+				frmrelatorio.ShowDialog();
+
+
+				WebServiceMarfrigSoapClient wbClinet = null;
+
+				try
+				{
+					wbClinet = new WebServiceMarfrigSoapClient();
+					wbClinet.UpdateCompraGadoImpresso(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
+				}
+				catch (Exception ex)
+				{
+					MetroFramework.MetroMessageBox.Show(this, ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+
+				Pesquisar();
 			}
-			catch (Exception ex)
-			{
-				MetroFramework.MetroMessageBox.Show(this, ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-			
-			Pesquisar();
 		}
 	}
 }

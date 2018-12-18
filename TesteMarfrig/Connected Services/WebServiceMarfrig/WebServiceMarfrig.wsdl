@@ -179,6 +179,20 @@
           <s:element minOccurs="1" maxOccurs="1" name="Preco" type="s:double" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetAllAnimalCompraGadoItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="compraGadoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAnimalCompraGadoItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAnimalCompraGadoItemResult" type="tns:ArrayOfAnimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="InserirAnimal">
         <s:complexType>
           <s:sequence>
@@ -413,6 +427,12 @@
   <wsdl:message name="GetAllAnimalSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllAnimalResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAllAnimalCompraGadoItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAnimalCompraGadoItem" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAnimalCompraGadoItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAnimalCompraGadoItemResponse" />
+  </wsdl:message>
   <wsdl:message name="InserirAnimalSoapIn">
     <wsdl:part name="parameters" element="tns:InserirAnimal" />
   </wsdl:message>
@@ -521,6 +541,10 @@
     <wsdl:operation name="GetAllAnimal">
       <wsdl:input message="tns:GetAllAnimalSoapIn" />
       <wsdl:output message="tns:GetAllAnimalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAnimalCompraGadoItem">
+      <wsdl:input message="tns:GetAllAnimalCompraGadoItemSoapIn" />
+      <wsdl:output message="tns:GetAllAnimalCompraGadoItemSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="InserirAnimal">
       <wsdl:input message="tns:InserirAnimalSoapIn" />
@@ -647,6 +671,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllAnimal">
       <soap:operation soapAction="http://tempuri.org/GetAllAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAnimalCompraGadoItem">
+      <soap:operation soapAction="http://tempuri.org/GetAllAnimalCompraGadoItem" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -839,6 +872,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllAnimal">
       <soap12:operation soapAction="http://tempuri.org/GetAllAnimal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAnimalCompraGadoItem">
+      <soap12:operation soapAction="http://tempuri.org/GetAllAnimalCompraGadoItem" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

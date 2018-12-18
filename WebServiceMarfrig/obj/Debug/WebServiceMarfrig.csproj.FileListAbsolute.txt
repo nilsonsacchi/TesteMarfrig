@@ -1,7 +1,8 @@
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\de\Microsoft.ReportViewer.Common.resources.dll
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\SqlServerTypes\x64\msvcr120.dll
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\SqlServerTypes\x86\msvcr120.dll
-C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\WebServiceMarfrig.dll.config
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\WebServiceMarfrig.dll
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\WebServiceMarfrig.pdb
@@ -23,7 +24,6 @@ C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\Microsoft.VisualStudio.TextMa
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\Microsoft.MSXML.dll
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\Dapper.xml
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\de\Microsoft.ReportViewer.Common.resources.dll
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\es\Microsoft.ReportViewer.Common.resources.dll
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\fr\Microsoft.ReportViewer.Common.resources.dll
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\it\Microsoft.ReportViewer.Common.resources.dll
@@ -66,4 +66,3 @@ C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\bin\zh-CHT\Microsoft.ReportViewer
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\obj\Debug\WebServiceMarfrig.csproj.CoreCompileInputs.cache
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\obj\Debug\WebServiceMarfrig.dll
 C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\obj\Debug\WebServiceMarfrig.pdb
-C:\TesteMarfrig\TesteMarfrig\WebServiceMarfrig\obj\Debug\WebServiceMarfrig.csprojResolveAssemblyReference.cache

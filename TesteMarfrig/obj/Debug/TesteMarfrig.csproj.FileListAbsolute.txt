@@ -1,3 +1,4 @@
+C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -27,7 +28,6 @@ C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\es\Microsoft.ReportViewer.Co
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
-C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
 C:\TesteMarfrig\TesteMarfrig\TesteMarfrig\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll

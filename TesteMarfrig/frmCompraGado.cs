@@ -204,27 +204,49 @@ namespace TesteMarfrig
 
 		private void btnExcluirAnimal_Click(object sender, EventArgs e)
 		{
-			if (txtId.Text == "NOVO")
-				return;
-
-			if (metroGrid1.CurrentRow.Cells[4].Value.ToString() == "")
-				return;
-
-			if (MetroFramework.MetroMessageBox.Show(this, "Tem certeza que deseja excluir o item: " + metroGrid1.CurrentRow.Cells[0].Value.ToString(), "Excluir ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-				return;
-
-			WebServiceMarfrigSoapClient wbClinet = null;
-
-			try
+			if (metroGrid1.RowCount >= 1)
 			{
-				wbClinet = new WebServiceMarfrigSoapClient();
-				wbClinet.DeleteCompraGadoItem(Convert.ToInt32(metroGrid1.CurrentRow.Cells[4].Value.ToString()));
+				if (txtId.Text == "NOVO")
+					return;
 
-				getAllCompraGadoItem(Convert.ToInt32(txtId.Text));
+				if (metroGrid1.CurrentRow.Cells[4].Value.ToString() == "")
+					return;
+
+				if (MetroFramework.MetroMessageBox.Show(this, "Tem certeza que deseja excluir o item: " + metroGrid1.CurrentRow.Cells[0].Value.ToString(), "Excluir ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+					return;
+
+				WebServiceMarfrigSoapClient wbClinet = null;
+
+				try
+				{
+					wbClinet = new WebServiceMarfrigSoapClient();
+					wbClinet.DeleteCompraGadoItem(Convert.ToInt32(metroGrid1.CurrentRow.Cells[4].Value.ToString()));
+
+					getAllCompraGadoItem(Convert.ToInt32(txtId.Text));
+				}
+				catch (Exception ex)
+				{
+					MetroFramework.MetroMessageBox.Show(this, ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
-			catch (Exception ex)
+		}
+
+		private void frmCompraGado_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			if (metroGrid1.RowCount < 1 && txtId.Text != "NOVO")
 			{
-				MetroFramework.MetroMessageBox.Show(this, ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				WebServiceMarfrigSoapClient wbClinet = null;
+
+				try
+				{
+					wbClinet = new WebServiceMarfrigSoapClient();
+					wbClinet.DeleteCompraGado(Convert.ToInt32(txtId.Text));
+				}
+				catch (Exception ex)
+				{
+					MetroFramework.MetroMessageBox.Show(this, ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+
 			}
 		}
 	}

@@ -230,7 +230,16 @@ namespace WebServiceMarfrig
 				{
 					db.Open();
 				}
-				return db.Query<Animal>("SELECT * FROM Animal", commandType: CommandType.Text).ToList();
+				string select = null;
+
+				select = "SELECT * ";
+				select = select + "FROM ANIMAL A ";
+				select = select + "WHERE ";
+				select = select + "NOT EXISTS (SELECT A.Id ";
+				select = select + "			FROM CompraGadoItem cgi ";
+				select = select + "			WHERE cgi.CompraGadoId = @compragadoid and a.Id = cgi.AnimalId)";
+
+				return db.Query<Animal>(select, new { compragadoid = compraGadoId }, commandType: CommandType.Text).ToList();
 			}
 		}
 

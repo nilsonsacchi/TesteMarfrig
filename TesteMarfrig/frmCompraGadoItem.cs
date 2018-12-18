@@ -23,11 +23,6 @@ namespace TesteMarfrig
 
 		private void metroButton1_Click(object sender, EventArgs e)
 		{
-			if (Convert.ToInt32(txtQuantidade.Text)> 0 & txtAnimal.Text != "")
-			{
-				if (MetroFramework.MetroMessageBox.Show(this, "Deseja sair sem salvar as informações ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-					return;
-			}
 			this.Close();
 		}
 
@@ -41,7 +36,7 @@ namespace TesteMarfrig
 			try
 			{
 				WebServiceMarfrigSoapClient webpec = new WebServiceMarfrigSoapClient();
-				animalBindingSource.DataSource = webpec.GetAllAnimal();
+				animalBindingSource.DataSource = webpec.GetAllAnimalCompraGadoItem(compraGadoId);
 
 				Animal oanimal = animalBindingSource.Current as Animal;
 			}
@@ -77,7 +72,6 @@ namespace TesteMarfrig
 				return;
 			}
 				
-
 			WebServiceMarfrigSoapClient wbClient = null;
 			CompraGadoItem classcompragadoitem = null;
 

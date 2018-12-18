@@ -664,6 +664,13 @@ namespace TesteMarfrig.WebServiceMarfrig {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllAnimal", ReplyAction="*")]
         System.Threading.Tasks.Task<TesteMarfrig.WebServiceMarfrig.GetAllAnimalResponse> GetAllAnimalAsync(TesteMarfrig.WebServiceMarfrig.GetAllAnimalRequest request);
         
+        // CODEGEN: Generating message contract since element name GetAllAnimalCompraGadoItemResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllAnimalCompraGadoItem", ReplyAction="*")]
+        TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemResponse GetAllAnimalCompraGadoItem(TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllAnimalCompraGadoItem", ReplyAction="*")]
+        System.Threading.Tasks.Task<TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemResponse> GetAllAnimalCompraGadoItemAsync(TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequest request);
+        
         // CODEGEN: Generating message contract since element name oAnimal from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InserirAnimal", ReplyAction="*")]
         TesteMarfrig.WebServiceMarfrig.InserirAnimalResponse InserirAnimal(TesteMarfrig.WebServiceMarfrig.InserirAnimalRequest request);
@@ -1265,6 +1272,74 @@ namespace TesteMarfrig.WebServiceMarfrig {
         
         public GetAllAnimalResponseBody(TesteMarfrig.WebServiceMarfrig.Animal[] GetAllAnimalResult) {
             this.GetAllAnimalResult = GetAllAnimalResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllAnimalCompraGadoItemRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllAnimalCompraGadoItem", Namespace="http://tempuri.org/", Order=0)]
+        public TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequestBody Body;
+        
+        public GetAllAnimalCompraGadoItemRequest() {
+        }
+        
+        public GetAllAnimalCompraGadoItemRequest(TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllAnimalCompraGadoItemRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int compraGadoId;
+        
+        public GetAllAnimalCompraGadoItemRequestBody() {
+        }
+        
+        public GetAllAnimalCompraGadoItemRequestBody(int compraGadoId) {
+            this.compraGadoId = compraGadoId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllAnimalCompraGadoItemResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllAnimalCompraGadoItemResponse", Namespace="http://tempuri.org/", Order=0)]
+        public TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemResponseBody Body;
+        
+        public GetAllAnimalCompraGadoItemResponse() {
+        }
+        
+        public GetAllAnimalCompraGadoItemResponse(TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllAnimalCompraGadoItemResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public TesteMarfrig.WebServiceMarfrig.Animal[] GetAllAnimalCompraGadoItemResult;
+        
+        public GetAllAnimalCompraGadoItemResponseBody() {
+        }
+        
+        public GetAllAnimalCompraGadoItemResponseBody(TesteMarfrig.WebServiceMarfrig.Animal[] GetAllAnimalCompraGadoItemResult) {
+            this.GetAllAnimalCompraGadoItemResult = GetAllAnimalCompraGadoItemResult;
         }
     }
     
@@ -2025,6 +2100,31 @@ namespace TesteMarfrig.WebServiceMarfrig {
             TesteMarfrig.WebServiceMarfrig.GetAllAnimalRequest inValue = new TesteMarfrig.WebServiceMarfrig.GetAllAnimalRequest();
             inValue.Body = new TesteMarfrig.WebServiceMarfrig.GetAllAnimalRequestBody();
             return ((TesteMarfrig.WebServiceMarfrig.WebServiceMarfrigSoap)(this)).GetAllAnimalAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemResponse TesteMarfrig.WebServiceMarfrig.WebServiceMarfrigSoap.GetAllAnimalCompraGadoItem(TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequest request) {
+            return base.Channel.GetAllAnimalCompraGadoItem(request);
+        }
+        
+        public TesteMarfrig.WebServiceMarfrig.Animal[] GetAllAnimalCompraGadoItem(int compraGadoId) {
+            TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequest inValue = new TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequest();
+            inValue.Body = new TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequestBody();
+            inValue.Body.compraGadoId = compraGadoId;
+            TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemResponse retVal = ((TesteMarfrig.WebServiceMarfrig.WebServiceMarfrigSoap)(this)).GetAllAnimalCompraGadoItem(inValue);
+            return retVal.Body.GetAllAnimalCompraGadoItemResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemResponse> TesteMarfrig.WebServiceMarfrig.WebServiceMarfrigSoap.GetAllAnimalCompraGadoItemAsync(TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequest request) {
+            return base.Channel.GetAllAnimalCompraGadoItemAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemResponse> GetAllAnimalCompraGadoItemAsync(int compraGadoId) {
+            TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequest inValue = new TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequest();
+            inValue.Body = new TesteMarfrig.WebServiceMarfrig.GetAllAnimalCompraGadoItemRequestBody();
+            inValue.Body.compraGadoId = compraGadoId;
+            return ((TesteMarfrig.WebServiceMarfrig.WebServiceMarfrigSoap)(this)).GetAllAnimalCompraGadoItemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
