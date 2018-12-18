@@ -26,7 +26,7 @@ AS
 	WHERE Id = @ID	
 GO
 
-CREATE PROCEDURE ..sp_Atualizar_CompraGadoImpresso
+ALTER PROCEDURE ..sp_Atualizar_CompraGadoImpresso
 (
 	@Id int output
 )

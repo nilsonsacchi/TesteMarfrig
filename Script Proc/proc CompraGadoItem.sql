@@ -1,5 +1,6 @@
 ALTER PROCEDURE ..sp_Inserir_CompraGadoItem
 (
+	@Id int output,
 	@Quantidade int,
 	@CompraGadoId int, 
 	@AnimalId int

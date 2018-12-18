@@ -9,7 +9,6 @@ AS
 	VALUES
 	(@Descricao, @Preco)
 	SET @Id = SCOPE_IDENTITY();
-
 GO
 
 ALTER PROCEDURE ..sp_Atualizar_Animal
@@ -24,5 +23,7 @@ AS
 		Descricao = @Descricao, 
 		Preco = @Preco
 	WHERE Id = @ID	
-
 GO
+
+
+select * from Animal

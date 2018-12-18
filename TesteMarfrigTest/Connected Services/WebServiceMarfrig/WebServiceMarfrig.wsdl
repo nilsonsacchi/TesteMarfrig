@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetCompraGadoItemPorCompraGado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="gadoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompraGadoItemPorCompraGadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompraGadoItemPorCompraGadoResult" type="tns:ArrayOfCompraGadoItemSelect" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCompraGadoItemSelect">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompraGadoItemSelect" nillable="true" type="tns:CompraGadoItemSelect" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompraGadoItemSelect">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Quantidade" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Preco" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valortotal" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetConsultaCompraGado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="compraGado" type="tns:CompraGado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CompraGado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataEntrega" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataEntregaAte" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PecuaristaId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Impresso" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetConsultaCompraGadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsultaCompraGadoResult" type="tns:ArrayOfCompraGadoConsulta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCompraGadoConsulta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompraGadoConsulta" nillable="true" type="tns:CompraGadoConsulta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompraGadoConsulta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PecuaristaId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataEntrega" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantidadeItem" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTotal" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Impresso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Preco" nillable="true" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRelatorioCompraGado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="compraGadoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRelatorioCompraGadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRelatorioCompraGadoResult" type="tns:ArrayOfCompraGadoConsulta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPecuarista">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPecuaristaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPecuaristaResult" type="tns:ArrayOfPecuarista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPecuarista">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pecuarista" nillable="true" type="tns:Pecuarista" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Pecuarista">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllPecuaristaCompraGado">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPecuaristaCompraGadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPecuaristaCompraGadoResult" type="tns:ArrayOfPecuarista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirPecuarista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oPecuarista" type="tns:Pecuarista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirPecuaristaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirPecuaristaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePecuarista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oPecuarista" type="tns:Pecuarista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePecuaristaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePecuaristaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePecuarista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="oPecuaristaId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePecuaristaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeletePecuaristaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAnimal">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAnimalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAnimalResult" type="tns:ArrayOfAnimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnimal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Animal" nillable="true" type="tns:Animal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Animal">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Preco" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllAnimalCompraGadoItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="compraGadoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAnimalCompraGadoItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAnimalCompraGadoItemResult" type="tns:ArrayOfAnimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirAnimal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oAnimal" type="tns:Animal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirAnimalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirAnimalResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAnimal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oAnimal" type="tns:Animal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAnimalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAnimalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAnimal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="oAnimalId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAnimalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAnimalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCompraGado">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCompraGadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCompraGadoResult" type="tns:ArrayOfCompraGado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCompraGado">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompraGado" nillable="true" type="tns:CompraGado" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InserirCompraGado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oGado" type="tns:CompraGado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirCompraGadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirCompraGadoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCompraGado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oGado" type="tns:CompraGado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCompraGadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCompraGadoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCompraGadoImpresso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="oGado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCompraGadoImpressoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCompraGadoImpressoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCompraGado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="gadoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCompraGadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteCompraGadoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCompraGadoItem">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCompraGadoItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCompraGadoItemResult" type="tns:ArrayOfCompraGadoItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCompraGadoItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompraGadoItem" nillable="true" type="tns:CompraGadoItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompraGadoItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantidade" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompraGadoId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnimalId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InserirCompraGadoItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oGadoItem" type="tns:CompraGadoItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirCompraGadoItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirCompraGadoItemResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCompraGadoItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oGadoItem" type="tns:CompraGadoItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCompraGadoItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCompraGadoItemResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCompraGadoItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="gadoItemId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCompraGadoItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteCompraGadoItemResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCompraGadoItemPorCompraGadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompraGadoItemPorCompraGado" />
+  </wsdl:message>
+  <wsdl:message name="GetCompraGadoItemPorCompraGadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompraGadoItemPorCompraGadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsultaCompraGadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsultaCompraGado" />
+  </wsdl:message>
+  <wsdl:message name="GetConsultaCompraGadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsultaCompraGadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRelatorioCompraGadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRelatorioCompraGado" />
+  </wsdl:message>
+  <wsdl:message name="GetRelatorioCompraGadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRelatorioCompraGadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPecuaristaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPecuarista" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPecuaristaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPecuaristaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPecuaristaCompraGadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPecuaristaCompraGado" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPecuaristaCompraGadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPecuaristaCompraGadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirPecuaristaSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirPecuarista" />
+  </wsdl:message>
+  <wsdl:message name="InserirPecuaristaSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirPecuaristaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePecuaristaSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePecuarista" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePecuaristaSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePecuaristaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePecuaristaSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePecuarista" />
+  </wsdl:message>
+  <wsdl:message name="DeletePecuaristaSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePecuaristaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAnimalSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAnimal" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAnimalSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAnimalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAnimalCompraGadoItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAnimalCompraGadoItem" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAnimalCompraGadoItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAnimalCompraGadoItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirAnimalSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirAnimal" />
+  </wsdl:message>
+  <wsdl:message name="InserirAnimalSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirAnimalResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAnimalSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAnimal" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAnimalSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAnimalResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnimalSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAnimal" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAnimalSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAnimalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCompraGadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCompraGado" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCompraGadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCompraGadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirCompraGadoSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirCompraGado" />
+  </wsdl:message>
+  <wsdl:message name="InserirCompraGadoSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirCompraGadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCompraGadoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCompraGado" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCompraGadoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCompraGadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCompraGadoImpressoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCompraGadoImpresso" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCompraGadoImpressoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCompraGadoImpressoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCompraGadoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCompraGado" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCompraGadoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCompraGadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCompraGadoItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCompraGadoItem" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCompraGadoItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCompraGadoItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirCompraGadoItemSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirCompraGadoItem" />
+  </wsdl:message>
+  <wsdl:message name="InserirCompraGadoItemSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirCompraGadoItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCompraGadoItemSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCompraGadoItem" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCompraGadoItemSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCompraGadoItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCompraGadoItemSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCompraGadoItem" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCompraGadoItemSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCompraGadoItemResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceMarfrigSoap">
+    <wsdl:operation name="GetCompraGadoItemPorCompraGado">
+      <wsdl:input message="tns:GetCompraGadoItemPorCompraGadoSoapIn" />
+      <wsdl:output message="tns:GetCompraGadoItemPorCompraGadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsultaCompraGado">
+      <wsdl:input message="tns:GetConsultaCompraGadoSoapIn" />
+      <wsdl:output message="tns:GetConsultaCompraGadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatorioCompraGado">
+      <wsdl:input message="tns:GetRelatorioCompraGadoSoapIn" />
+      <wsdl:output message="tns:GetRelatorioCompraGadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPecuarista">
+      <wsdl:input message="tns:GetAllPecuaristaSoapIn" />
+      <wsdl:output message="tns:GetAllPecuaristaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPecuaristaCompraGado">
+      <wsdl:input message="tns:GetAllPecuaristaCompraGadoSoapIn" />
+      <wsdl:output message="tns:GetAllPecuaristaCompraGadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirPecuarista">
+      <wsdl:input message="tns:InserirPecuaristaSoapIn" />
+      <wsdl:output message="tns:InserirPecuaristaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePecuarista">
+      <wsdl:input message="tns:UpdatePecuaristaSoapIn" />
+      <wsdl:output message="tns:UpdatePecuaristaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePecuarista">
+      <wsdl:input message="tns:DeletePecuaristaSoapIn" />
+      <wsdl:output message="tns:DeletePecuaristaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAnimal">
+      <wsdl:input message="tns:GetAllAnimalSoapIn" />
+      <wsdl:output message="tns:GetAllAnimalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAnimalCompraGadoItem">
+      <wsdl:input message="tns:GetAllAnimalCompraGadoItemSoapIn" />
+      <wsdl:output message="tns:GetAllAnimalCompraGadoItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirAnimal">
+      <wsdl:input message="tns:InserirAnimalSoapIn" />
+      <wsdl:output message="tns:InserirAnimalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAnimal">
+      <wsdl:input message="tns:UpdateAnimalSoapIn" />
+      <wsdl:output message="tns:UpdateAnimalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnimal">
+      <wsdl:input message="tns:DeleteAnimalSoapIn" />
+      <wsdl:output message="tns:DeleteAnimalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompraGado">
+      <wsdl:input message="tns:GetAllCompraGadoSoapIn" />
+      <wsdl:output message="tns:GetAllCompraGadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirCompraGado">
+      <wsdl:input message="tns:InserirCompraGadoSoapIn" />
+      <wsdl:output message="tns:InserirCompraGadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGado">
+      <wsdl:input message="tns:UpdateCompraGadoSoapIn" />
+      <wsdl:output message="tns:UpdateCompraGadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGadoImpresso">
+      <wsdl:input message="tns:UpdateCompraGadoImpressoSoapIn" />
+      <wsdl:output message="tns:UpdateCompraGadoImpressoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompraGado">
+      <wsdl:input message="tns:DeleteCompraGadoSoapIn" />
+      <wsdl:output message="tns:DeleteCompraGadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompraGadoItem">
+      <wsdl:input message="tns:GetAllCompraGadoItemSoapIn" />
+      <wsdl:output message="tns:GetAllCompraGadoItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirCompraGadoItem">
+      <wsdl:input message="tns:InserirCompraGadoItemSoapIn" />
+      <wsdl:output message="tns:InserirCompraGadoItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGadoItem">
+      <wsdl:input message="tns:UpdateCompraGadoItemSoapIn" />
+      <wsdl:output message="tns:UpdateCompraGadoItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompraGadoItem">
+      <wsdl:input message="tns:DeleteCompraGadoItemSoapIn" />
+      <wsdl:output message="tns:DeleteCompraGadoItemSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceMarfrigSoap" type="tns:WebServiceMarfrigSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCompraGadoItemPorCompraGado">
+      <soap:operation soapAction="http://tempuri.org/GetCompraGadoItemPorCompraGado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsultaCompraGado">
+      <soap:operation soapAction="http://tempuri.org/GetConsultaCompraGado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatorioCompraGado">
+      <soap:operation soapAction="http://tempuri.org/GetRelatorioCompraGado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPecuarista">
+      <soap:operation soapAction="http://tempuri.org/GetAllPecuarista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPecuaristaCompraGado">
+      <soap:operation soapAction="http://tempuri.org/GetAllPecuaristaCompraGado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirPecuarista">
+      <soap:operation soapAction="http://tempuri.org/InserirPecuarista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePecuarista">
+      <soap:operation soapAction="http://tempuri.org/UpdatePecuarista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePecuarista">
+      <soap:operation soapAction="http://tempuri.org/DeletePecuarista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAnimal">
+      <soap:operation soapAction="http://tempuri.org/GetAllAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAnimalCompraGadoItem">
+      <soap:operation soapAction="http://tempuri.org/GetAllAnimalCompraGadoItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirAnimal">
+      <soap:operation soapAction="http://tempuri.org/InserirAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAnimal">
+      <soap:operation soapAction="http://tempuri.org/UpdateAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnimal">
+      <soap:operation soapAction="http://tempuri.org/DeleteAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompraGado">
+      <soap:operation soapAction="http://tempuri.org/GetAllCompraGado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirCompraGado">
+      <soap:operation soapAction="http://tempuri.org/InserirCompraGado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGado">
+      <soap:operation soapAction="http://tempuri.org/UpdateCompraGado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGadoImpresso">
+      <soap:operation soapAction="http://tempuri.org/UpdateCompraGadoImpresso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompraGado">
+      <soap:operation soapAction="http://tempuri.org/DeleteCompraGado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompraGadoItem">
+      <soap:operation soapAction="http://tempuri.org/GetAllCompraGadoItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirCompraGadoItem">
+      <soap:operation soapAction="http://tempuri.org/InserirCompraGadoItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGadoItem">
+      <soap:operation soapAction="http://tempuri.org/UpdateCompraGadoItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompraGadoItem">
+      <soap:operation soapAction="http://tempuri.org/DeleteCompraGadoItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceMarfrigSoap12" type="tns:WebServiceMarfrigSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCompraGadoItemPorCompraGado">
+      <soap12:operation soapAction="http://tempuri.org/GetCompraGadoItemPorCompraGado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsultaCompraGado">
+      <soap12:operation soapAction="http://tempuri.org/GetConsultaCompraGado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatorioCompraGado">
+      <soap12:operation soapAction="http://tempuri.org/GetRelatorioCompraGado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPecuarista">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPecuarista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPecuaristaCompraGado">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPecuaristaCompraGado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirPecuarista">
+      <soap12:operation soapAction="http://tempuri.org/InserirPecuarista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePecuarista">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePecuarista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePecuarista">
+      <soap12:operation soapAction="http://tempuri.org/DeletePecuarista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAnimal">
+      <soap12:operation soapAction="http://tempuri.org/GetAllAnimal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAnimalCompraGadoItem">
+      <soap12:operation soapAction="http://tempuri.org/GetAllAnimalCompraGadoItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirAnimal">
+      <soap12:operation soapAction="http://tempuri.org/InserirAnimal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAnimal">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAnimal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAnimal">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAnimal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompraGado">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCompraGado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirCompraGado">
+      <soap12:operation soapAction="http://tempuri.org/InserirCompraGado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGado">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCompraGado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGadoImpresso">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCompraGadoImpresso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompraGado">
+      <soap12:operation soapAction="http://tempuri.org/DeleteCompraGado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompraGadoItem">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCompraGadoItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirCompraGadoItem">
+      <soap12:operation soapAction="http://tempuri.org/InserirCompraGadoItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompraGadoItem">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCompraGadoItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompraGadoItem">
+      <soap12:operation soapAction="http://tempuri.org/DeleteCompraGadoItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceMarfrig">
+    <wsdl:port name="WebServiceMarfrigSoap" binding="tns:WebServiceMarfrigSoap">
+      <soap:address location="http://localhost:50656/WebServiceMarfrig.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceMarfrigSoap12" binding="tns:WebServiceMarfrigSoap12">
+      <soap12:address location="http://localhost:50656/WebServiceMarfrig.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -165,11 +165,13 @@ namespace WebServiceMarfrig
 					db.Open();
 				}
 				DynamicParameters p = new DynamicParameters();
-				//p.Add("@Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+				p.Add("@Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
 				p.AddDynamicParams(new { Nome = oPecuarista.Nome });
 				int resultado = db.Execute("sp_Inserir_Pecuarista", p, commandType: CommandType.StoredProcedure);
-				/*if (resultado != 0) 
-					return p.Get<int>("@Id");*/
+
+				if (resultado != 0) 
+					return p.Get<int>("@Id");
+
 				return 0;
 			}
 		}
@@ -253,11 +255,13 @@ namespace WebServiceMarfrig
 					db.Open();
 				}
 				DynamicParameters p = new DynamicParameters();
-				//p.Add("@Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+				p.Add("@Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
 				p.AddDynamicParams(new { Descricao = oAnimal.Descricao, Preco = oAnimal.Preco });
 				int resultado = db.Execute("sp_Inserir_Animal", p, commandType: CommandType.StoredProcedure);
-				//if (resultado != 0)
-					//return p.Get<int>("@Id");
+				
+				if (resultado != 0)
+					return p.Get<int>("@Id");
+
 				return 0;
 			}
 		}
@@ -323,8 +327,10 @@ namespace WebServiceMarfrig
 				p.Add("@Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
 				p.AddDynamicParams(new { DataEntrega = oGado.DataEntrega, PecuaristaId = oGado.PecuaristaId });
 				int resultado = db.Execute("sp_Inserir_CompraGado", p, commandType: CommandType.StoredProcedure);
+
 				if (resultado != 0)
 					return p.Get<int>("@Id");
+
 				return 0;
 			}
 		}
@@ -404,11 +410,13 @@ namespace WebServiceMarfrig
 					db.Open();
 				}
 				DynamicParameters p = new DynamicParameters();
-				//p.Add("@Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+				p.Add("@Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
 				p.AddDynamicParams(new { Quantidade = oGadoItem.Quantidade, CompraGadoId = oGadoItem.CompraGadoId, AnimalId = oGadoItem.AnimalId });
 				int resultado = db.Execute("sp_Inserir_CompraGadoItem", p, commandType: CommandType.StoredProcedure);
-				//if (resultado != 0)
-					//return p.Get<int>("@Id");
+
+				if (resultado != 0)
+					return p.Get<int>("@Id");
+
 				return 0;
 			}
 		}
