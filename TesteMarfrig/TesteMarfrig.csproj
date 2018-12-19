@@ -92,16 +92,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCompraGadoItem.cs">
+    <Compile Include="Views\CompraGadoItem\frmCompraGadoItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCompraGadoItem.Designer.cs">
+    <Compile Include="Views\CompraGadoItem\frmCompraGadoItem.Designer.cs">
       <DependentUpon>frmCompraGadoItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAnimal.cs">
+    <Compile Include="Views\Animal\frmAnimal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAnimal.Designer.cs">
+    <Compile Include="Views\Animal\frmAnimal.Designer.cs">
       <DependentUpon>frmAnimal.cs</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\WebServiceMarfrig\Reference.cs">
@@ -109,28 +109,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="frmCompraGado.cs">
+    <Compile Include="Views\CompraGado\frmCompraGado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCompraGado.Designer.cs">
+    <Compile Include="Views\CompraGado\frmCompraGado.Designer.cs">
       <DependentUpon>frmCompraGado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaCompraGado.cs">
+    <Compile Include="Views\Consulta\frmConsultaCompraGado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaCompraGado.Designer.cs">
+    <Compile Include="Views\Consulta\frmConsultaCompraGado.Designer.cs">
       <DependentUpon>frmConsultaCompraGado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrincipal.cs">
+    <Compile Include="Views\Principal\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.Designer.cs">
+    <Compile Include="Views\Principal\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRelatorio.cs">
+    <Compile Include="Views\Relatorio\frmRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRelatorio.Designer.cs">
+    <Compile Include="Views\Relatorio\frmRelatorio.Designer.cs">
       <DependentUpon>frmRelatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Animal\Animal.cs" />
@@ -140,35 +140,35 @@
     <Compile Include="Model\CompraGado\CompraGadoConsulta.cs" />
     <Compile Include="Model\CompraGado\PecuaristaCompraGado.cs" />
     <Compile Include="Model\EntityState.cs" />
-    <Compile Include="frmPecuarista.cs">
+    <Compile Include="Views\Pecuarista\frmPecuarista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPecuarista.Designer.cs">
+    <Compile Include="Views\Pecuarista\frmPecuarista.Designer.cs">
       <DependentUpon>frmPecuarista.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Pecuarista\Pecuarista.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="frmCompraGadoItem.resx">
+    <EmbeddedResource Include="Views\CompraGadoItem\frmCompraGadoItem.resx">
       <DependentUpon>frmCompraGadoItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAnimal.resx">
+    <EmbeddedResource Include="Views\Animal\frmAnimal.resx">
       <DependentUpon>frmAnimal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCompraGado.resx">
+    <EmbeddedResource Include="Views\CompraGado\frmCompraGado.resx">
       <DependentUpon>frmCompraGado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaCompraGado.resx">
+    <EmbeddedResource Include="Views\Consulta\frmConsultaCompraGado.resx">
       <DependentUpon>frmConsultaCompraGado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
+    <EmbeddedResource Include="Views\Principal\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPecuarista.resx">
+    <EmbeddedResource Include="Views\Pecuarista\frmPecuarista.resx">
       <DependentUpon>frmPecuarista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRelatorio.resx">
+    <EmbeddedResource Include="Views\Relatorio\frmRelatorio.resx">
       <DependentUpon>frmRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -181,7 +181,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Relatorio.rdlc" />
+    <EmbeddedResource Include="Views\Relatorio\Relatorio.rdlc" />
     <None Include="Connected Services\WebServiceMarfrig\TesteMarfrig.WebServiceMarfrig.Animal.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -327,5 +327,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

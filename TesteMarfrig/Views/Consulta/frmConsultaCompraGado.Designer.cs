@@ -73,7 +73,7 @@
 			this.cmbPecuarista.ItemHeight = 23;
 			this.cmbPecuarista.Location = new System.Drawing.Point(326, 84);
 			this.cmbPecuarista.Name = "cmbPecuarista";
-			this.cmbPecuarista.Size = new System.Drawing.Size(282, 29);
+			this.cmbPecuarista.Size = new System.Drawing.Size(297, 29);
 			this.cmbPecuarista.TabIndex = 113;
 			this.cmbPecuarista.UseSelectable = true;
 			this.cmbPecuarista.ValueMember = "Id";
@@ -268,7 +268,7 @@
 			this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.metroGrid1.Size = new System.Drawing.Size(713, 257);
+			this.metroGrid1.Size = new System.Drawing.Size(713, 222);
 			this.metroGrid1.TabIndex = 125;
 			// 
 			// dataGridViewTextBoxColumn18

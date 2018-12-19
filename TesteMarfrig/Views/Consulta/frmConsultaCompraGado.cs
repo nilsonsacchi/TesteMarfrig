@@ -14,6 +14,7 @@ namespace TesteMarfrig
 	public partial class frmConsultaCompraGado : MetroFramework.Forms.MetroForm
 	{
 		EntityState oEntity = new EntityState();
+		WebServiceMarfrigSoapClient wbclient = new WebServiceMarfrigSoapClient();
 
 		public frmConsultaCompraGado()
 		{
@@ -29,8 +30,8 @@ namespace TesteMarfrig
 		{
 			try
 			{
-				WebServiceMarfrigSoapClient webclient = new WebServiceMarfrigSoapClient();
-				pecuaristaBindingSource.DataSource = webclient.GetAllPecuaristaCompraGado();
+				
+				pecuaristaBindingSource.DataSource = wbclient.GetAllPecuaristaCompraGado();
 
 				Pecuarista opecuarista = pecuaristaBindingSource.Current as Pecuarista;
 			}
@@ -81,12 +82,9 @@ namespace TesteMarfrig
 							if (MetroFramework.MetroMessageBox.Show(this, "Tem certeza que deseja excluir a compra : " + metroGrid1.CurrentRow.Cells[0].Value.ToString(), "Excluir ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
 								return;
 
-							WebServiceMarfrigSoapClient wbClinet = null;
-
 							try
 							{
-								wbClinet = new WebServiceMarfrigSoapClient();
-								wbClinet.DeleteCompraGado(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
+								wbclient.DeleteCompraGado(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
 							}
 							catch (Exception ex)
 							{
@@ -111,24 +109,43 @@ namespace TesteMarfrig
 
 		private void Pesquisar()
 		{
+			bool validaPesquisa = false;
+
 			CompraGado compragado = new CompraGado();
 
 			if (txtDataEntregaDe.Checked)
+			{
 				compragado.DataEntrega = Convert.ToDateTime(txtDataEntregaDe.Value);
+				validaPesquisa = true;
+			}
 
 			if (txtDataEntregaAte.Checked)
+			{
 				compragado.DataEntregaAte = Convert.ToDateTime(txtDataEntregaAte.Value);
+				validaPesquisa = true;
+			}
 
 			if (Convert.ToInt32(cmbPecuarista.SelectedValue) > 0)
+			{
 				compragado.PecuaristaId = Convert.ToInt32(cmbPecuarista.SelectedValue);
+				validaPesquisa = true;
+			}
 
 			if (txtId.Text != "")
+			{
 				compragado.Id = Convert.ToInt32(txtId.Text);
+				validaPesquisa = true;
+			}
+
+			if (validaPesquisa != true)
+			{
+				MetroFramework.MetroMessageBox.Show(this, "Por favor, digite um item para pesquisa.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return;
+			}
 
 			try
 			{
-				WebServiceMarfrigSoapClient webclient = new WebServiceMarfrigSoapClient();
-				compraGadoConsultaBindingSource.DataSource = webclient.GetConsultaCompraGado(compragado);
+				compraGadoConsultaBindingSource.DataSource = wbclient.GetConsultaCompraGado(compragado);
 
 				CompraGado oCompragado = compraGadoConsultaBindingSource.Current as CompraGado;
 			}
@@ -159,13 +176,9 @@ namespace TesteMarfrig
 				frmRelatorio frmrelatorio = new frmRelatorio(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
 				frmrelatorio.ShowDialog();
 
-
-				WebServiceMarfrigSoapClient wbClinet = null;
-
 				try
 				{
-					wbClinet = new WebServiceMarfrigSoapClient();
-					wbClinet.UpdateCompraGadoImpresso(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
+					wbclient.UpdateCompraGadoImpresso(Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value.ToString()));
 				}
 				catch (Exception ex)
 				{
